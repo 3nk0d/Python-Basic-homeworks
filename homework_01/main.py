@@ -46,4 +46,4 @@ def filter_numbers(lst, filtr):
         return [i for i in lst if i % 2]
     elif filtr == EVEN:
         return [i for i in lst if not(i % 2)]
-    return list(filter(is_prime,lst))
+    return list(filter(is_prime, lst))
