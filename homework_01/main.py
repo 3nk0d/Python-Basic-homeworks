@@ -21,7 +21,7 @@ PRIME = "prime"
 
 
 def is_prime(num):
-    if num == 1:
+    if num in (0, 1):
         return False
     elif num == 2:
         return True
