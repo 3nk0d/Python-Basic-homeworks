@@ -24,4 +24,5 @@ class Vehicle(ABC):
         fuel_exist = self.fuel - (distance * self.fuel_consumption)
         if fuel_exist >= 0:
             self.fuel = fuel_exist
-        raise NotEnoughFuel
+        else:
+            raise NotEnoughFuel
