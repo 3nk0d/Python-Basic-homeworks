@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-router = APIRouter()
+router = APIRouter(tags=["Items"])
 
 items = {1: "John",
          2: "Kate",
