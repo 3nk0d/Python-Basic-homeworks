@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-
+from views.views import router as rout_views
 
 app = FastAPI()
-
+app.include_router(rout_views)
 
 @app.get("/")
 def main_page():
