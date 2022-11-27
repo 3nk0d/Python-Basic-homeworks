@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "homework-03"
+version = "0.1.0"
+description = "Домашнее задание \"Docker контейнер c веб-приложением\""
+authors = ["3nk0d <D1man680@yandex.com>"]
+readme = "README.md"
+packages = [{include = "homework_03"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.87.0"
+uvicorn = {extras = ["standart"], version = "^0.19.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
