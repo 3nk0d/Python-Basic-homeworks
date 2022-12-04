@@ -13,15 +13,41 @@
 - закрытие соединения с БД
 """
 import asyncio
-from .models import engine, Base
-from jsonplaceholder_requests import fetch_json
+from sqlalchemy.ext.asyncio import AsyncSession
+from models import engine, Base, User, Post, Session
+from jsonplaceholder_requests import users_get, posts_get
+
+
+async def create_users(data, session: AsyncSession):
+    for item in data:
+        user = User(id=item.get("id"), name=item.get("name"), username=item.get("username"), email=item.get("email"))
+        session.add(user)
+    await session.commit()
+    print("122")
+
+
+async def create_posts(data, session: AsyncSession):
+    for item in data:
+        post = Post(id=item.get("id"), user_id=item.get("userId"), title=item.get("title"), body=item.get("body"))
+        session.add(post)
+    await session.commit()
 
 
 async def async_main():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)
-
+    users_data: list[dict]
+    posts_data: list[dict]
+    users_data, posts_data = await asyncio.gather(
+        users_get(),
+        posts_get(),
+    )
+    async with Session() as session:
+        await create_users(users_data, session)
+        await create_posts(posts_data, session)
+    await session.close()
+    print('session closed')
 
 
 def main():
