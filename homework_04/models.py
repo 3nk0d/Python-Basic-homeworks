@@ -9,11 +9,11 @@
 """
 import os
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 
-PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+asyncpg://postgres:password@localhost/postgres"
+PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+asyncpg://postgres:super@localhost/postgres"
 
 engine = create_async_engine(
     url=PG_CONN_URI,
@@ -30,14 +30,18 @@ Session = sessionmaker(
 
 
 class User(Base):
+    __tablename__ = 'user'
+    id = Column(Integer, primary_key=True)
     name = Column(String(30))
     username = Column(String(20), unique=True)
     email = Column(String(35))
-    posts = relationship('Post', back_populates='User')
+    posts = relationship('Post', back_populates='user')
 
 
 class Post(Base):
-    user_id = Column(Integer)
+    __tablename__ = 'post'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String)
     body = Column(String)
-    user = relationship('User', back_populates='Post')
+    user = relationship('User', back_populates='posts')
