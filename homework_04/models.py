@@ -17,7 +17,7 @@ PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+asyncpg://
 
 engine = create_async_engine(
     url=PG_CONN_URI,
-    echo=True
+    echo=False,
 )
 
 Base = declarative_base(bind=engine)
@@ -25,7 +25,7 @@ Base = declarative_base(bind=engine)
 Session = sessionmaker(
     engine,
     class_=AsyncSession,
-    expire_on_commit=False
+    expire_on_commit=False,
 )
 
 
