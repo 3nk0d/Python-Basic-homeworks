@@ -18,12 +18,12 @@ app = Flask(__name__)
 
 @app.get("/")
 def index():
-    return "<html><head><title>Index page</title></head><body><h1>Index page<h1></body></html>"
+    return render_template("index.html")
 
 
 @app.get("/about/")
 def about():
-    return "<body><h1>About page<h1><br><h3>This site is made for homework 05.</h3></body>"
+    return render_template("about.html")
 
 
 @app.get("/base/")
