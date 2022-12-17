@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 @app.get("/")
 def index():
-    return "<h1>Index page:<h1>"
+    return "<html><head><title>Index page</title></head><body><h1>Index page<h1></body></html>"
 
 
 @app.get("/about/")
