@@ -23,7 +23,6 @@ async def create_users(data, session: AsyncSession):
         user = User(id=item.get("id"), name=item.get("name"), username=item.get("username"), email=item.get("email"))
         session.add(user)
     await session.commit()
-    print("122")
 
 
 async def create_posts(data, session: AsyncSession):
@@ -47,11 +46,11 @@ async def async_main():
         await create_users(users_data, session)
         await create_posts(posts_data, session)
     await session.close()
-    print('session closed')
 
 
 def main():
     asyncio.run(async_main())
+
 
 
 if __name__ == "__main__":
