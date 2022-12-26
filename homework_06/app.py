@@ -1,13 +1,16 @@
 from flask import Flask, render_template
-from fill_db import main, Session
+from fill_db import main
+from sql import read, read_user, read_record
 
 main()
+#read()
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
     return render_template("index.html")
+
 
 @app.route("/create_records/")
 def create_records():
@@ -16,4 +19,5 @@ def create_records():
 
 @app.route("/view_records/")
 def view_records():
-    return render_template("view_records.html", record = "record_1")
+    return render_template("view_records.html", record=read())
+    #record=["record_1", "record_2"])
