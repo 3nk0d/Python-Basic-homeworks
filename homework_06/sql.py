@@ -65,19 +65,3 @@ def read_users(session: SessionType) -> User | None:
     users = session.query(User).all()
     #print(user)
     return users
-
-
-def read():
-    pass
-    #Base.metadata.drop_all()
-    #Base.metadata.create_all()
-
-    session: SessionType = Session()
-
-    #print(read_record(session, 1))
-    #print(read_user(session, 1))
-    users = read_users(session)
-    #session.close()
-    return users
-
-#read()
