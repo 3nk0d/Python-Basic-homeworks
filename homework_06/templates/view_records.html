@@ -11,7 +11,11 @@
     {% block body %}
 
       <h1>Records</h1>
-      {{ record }}
+      <div class="container">
+      {% for item in record %}
+        <li class="list-group-item">{{ item }}</li>
+      {% endfor %}
+      </div>
         <br>
       <button type="button" class="btn btn-primary">Primary</button>
 
