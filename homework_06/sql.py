@@ -1,6 +1,7 @@
 from sqlalchemy.orm import scoped_session, declarative_base, sessionmaker, relationship, Session as SessionType
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 import os
+from database import db
 
 PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+psycopg2://postgres:super@localhost/postgres"
 
@@ -13,7 +14,7 @@ session_factory = sessionmaker(bind=engine)
 Session = scoped_session(session_factory)
 
 
-class User(Base):
+class User(db.Model):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     name = Column(String(30))
@@ -28,7 +29,7 @@ class User(Base):
         return str(self)
 
 
-class Post(Base):
+class Post(db.Model):
     __tablename__ = 'post'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
