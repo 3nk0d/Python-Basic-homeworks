@@ -1,7 +1,7 @@
 from sqlalchemy.orm import scoped_session, declarative_base, sessionmaker, relationship, Session as SessionType
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 import os
-from database import db
+from .database import db
 
 PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+psycopg2://postgres:super@localhost/postgres"
 
@@ -66,3 +66,15 @@ def read_users(session: SessionType) -> User | None:
     users = session.query(User).all()
     #print(user)
     return users
+
+
+def create_user(data, session: SessionType):
+    user = User(id=item.get("id"), name=item.get("name"), username=item.get("username"), email=item.get("email"))
+    session.add(user)
+    session.commit()
+
+
+def create_posts(data, session: SessionType):
+    post = Post(id=item.get("id"), user_id=item.get("userId"), title=item.get("title"), body=item.get("body"))
+    session.add(post)
+    session.commit()
