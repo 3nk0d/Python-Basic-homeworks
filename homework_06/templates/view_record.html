@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+      <title>View records</title>
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+
+      <div class="container">
+
+      <h1>Record {{ record.id }}:</h1>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+            TITLE:{{ record.title }}
+            <br>
+            BODY: {{ record.body }}
+            <br>
+        </li>
+      </ul>
+
+      <br>
+      <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Choose record</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Number of record">
+          </div>
+      </form>
+
+      <br>
+      <button type="button" class="btn btn-primary">Read</button>
+        <br>
+      </div>
+
+        <a href="{{ url_for('view_records') }}" class='btn btn-primary'>view_records</a>
+
+
+    {% endblock %}
+</body>
+</html>
