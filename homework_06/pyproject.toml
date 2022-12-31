@@ -13,6 +13,7 @@ flask = "^2.2.2"
 psycopg2 = "^2.9.5"
 asyncpg = "0.27.0"
 flask-sqlalchemy = "^3.0.2"
+flask-migrate = "^4.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
