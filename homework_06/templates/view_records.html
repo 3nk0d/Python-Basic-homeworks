@@ -10,15 +10,24 @@
 <body>
     {% block body %}
 
-      <h1>Records</h1>
       <div class="container">
-          {{record}}
-      {% for item in record1 %}
-        <li class="list-group-item">{{ item }}</li>
+
+      <h1>Records:</h1>
+
+      <ul class="list-group">
+      {% for item in record %}
+        <li class="list-group-item">
+            ID:{{ item.id }}
+            <br>
+            TITLE:{{ item.title }}
+            <br>
+            BODY: {{ item.body }}
+            <br>
+        </li>
       {% endfor %}
+      </ul>
+
       </div>
-        <br>
-      <button type="button" class="btn btn-primary">Primary</button>
 
     {% endblock %}
 </body>
