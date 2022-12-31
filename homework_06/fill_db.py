@@ -33,9 +33,9 @@ async def create_posts(data, session: AsyncSession):
 
 
 async def async_main():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)
-        await conn.run_sync(Base.metadata.create_all)
+    #async with engine.begin() as conn:
+    #    await conn.run_sync(Base.metadata.drop_all)
+    #    await conn.run_sync(Base.metadata.create_all)
     users_data: list[dict]
     posts_data: list[dict]
     users_data, posts_data = await asyncio.gather(

@@ -1,4 +1,4 @@
-from sql import User, Post, read_user, read_users, read_record, read_records, Session
+from homework_06.models.sql import read_users, Session
 from sqlalchemy.orm import Session as SessionType
 
 
