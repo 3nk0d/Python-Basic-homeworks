@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+      <title>Create records</title>
+    {% endblock %}
+</head>
+<body>
+
+
+    {% block body %}
+	<div class="container">
+	  <form action="" method="POST">
+		  <div class="form-group">
+			<label for="input_id">id</label>
+			<input type="text" class="form-control" id="input_id" placeholder="Input id" name="input_id">
+		  </div>
+		  <div class="form-group">
+			<label for="user_id">User id</label>
+			<input type="text" class="form-control" id="user_id" placeholder="User id" name="user_id">
+		  </div>
+		  <div class="form-group">
+			<label for="title">Title</label>
+			<input type="text" class="form-control" id="title" placeholder="Title" name="title">
+		  </div>
+		  <div class="form-group">
+			<label for="body">Body</label>
+			<input type="text" class="form-control" id="body" placeholder="Body" name="body">
+		  </div>
+		  <br>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

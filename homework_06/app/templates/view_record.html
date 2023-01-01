@@ -24,19 +24,16 @@
       </ul>
 
       <br>
-      <form>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Choose record</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Number of record">
-          </div>
-      </form>
-
-      <br>
-      <button type="button" class="btn btn-primary">Read</button>
-        <br>
-      </div>
-
-        <a href="{{ url_for('view_records') }}" class='btn btn-primary'>view_records</a>
+      <div class="container">
+	  <form action="" method="POST">
+		  <div class="form-group">
+			<label for="requested_id">Id</label>
+			<input type="text" class="form-control" id="requested_id" placeholder="Input id" name="requested_id">
+		  </div>
+          <br>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+    </div>
 
 
     {% endblock %}

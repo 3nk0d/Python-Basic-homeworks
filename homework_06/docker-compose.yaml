@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      SQLALCHEMY_PG_CONN_URI: postgresql+asyncpg://user:pass@postgres/blog
+      SQLALCHEMY_PG_CONN_URI: postgresql+psycopg2://user:pass@postgres/blog
     depends_on:
       postgres:
         condition: service_healthy
