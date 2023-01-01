@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+      <title>View records</title>
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+
+      <div class="container">
+
+      <h1>Records:</h1>
+
+      <ul class="list-group">
+      {% for item in record %}
+        <li class="list-group-item">
+            ID:{{ item.id }}
+            <br>
+            NAME:{{ item.name }}
+            <br>
+            USERNAME: {{ item.username }}
+            <br>
+            EMAIL: {{ item.email }}
+            <br>
+        </li>
+      {% endfor %}
+      </ul>
+
+      </div>
+
+    {% endblock %}
+</body>
+</html>
