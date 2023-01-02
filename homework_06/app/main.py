@@ -18,7 +18,7 @@ def index():
 
 @app.route("/create_record/", methods=["GET", "POST"])
 def create_record():
-    from .data import users, posts
+    #from data import users, posts
     # for item in users:
     #    user = User(id=item.get("id"), name=item.get("name"), username=item.get("username"), email=item.get("email"))
     #    print(user)
@@ -75,14 +75,9 @@ def view_users():
 
 @app.route("/view_record/", methods=["GET", "POST"])
 def view_record():
-    record_id = 1
+    post = Post()
     if request.method == "POST":
         record_id = request.form.get('requested_id')
         print(record_id)
-    post = Post.query.get_or_404(record_id, description=f"Record #{record_id} not found.")
+        post = Post.query.get_or_404(record_id, description=f"Record #{record_id} not found.")
     return render_template("view_record.html", record=post)
-
-
-if __name__ == "__main__":
-    # Only for debugging while developing
-    app.run(host='0.0.0.0', debug=True, port=5000)

@@ -5,7 +5,7 @@ services:
     build:
       dockerfile: ./Dockerfile
     ports:
-      - "5000:5000"
+      - "8000:80"
     environment:
       SQLALCHEMY_PG_CONN_URI: postgresql+psycopg2://user:pass@postgres/blog
     depends_on:
