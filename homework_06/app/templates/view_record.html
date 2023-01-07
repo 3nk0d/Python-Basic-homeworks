@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+      <title>View records</title>
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+
+      <div class="container">
+
+      <h1>Record {{ record.id }}:</h1>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+            TITLE:{{ record.title }}
+            <br>
+            BODY: {{ record.body }}
+            <br>
+        </li>
+      </ul>
+
+      <br>
+      <div class="container">
+	  <form action="" method="POST">
+		  <div class="form-group">
+			<label for="requested_id">Id</label>
+			<input type="text" class="form-control" id="requested_id" placeholder="Input id" name="requested_id">
+		  </div>
+          <br>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+    </div>
+
+
+    {% endblock %}
+</body>
+</html>
