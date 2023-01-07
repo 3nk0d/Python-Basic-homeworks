@@ -12,5 +12,3 @@ COPY poetry.lock .
 RUN poetry install --no-root --without dev
 
 COPY ./app /app
-
-

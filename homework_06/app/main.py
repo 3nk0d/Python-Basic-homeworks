@@ -18,18 +18,7 @@ def index():
 
 @app.route("/create_record/", methods=["GET", "POST"])
 def create_record():
-    #from data import users, posts
-    # for item in users:
-    #    user = User(id=item.get("id"), name=item.get("name"), username=item.get("username"), email=item.get("email"))
-    #    print(user)
-    #    db.session.add(user)
-    #    db.session.commit()
-    # for item in posts:
-    #    post = Post(id=item.get("id"), user_id=item.get("userId"), title=item.get("title"), body=item.get("body"))
-    #    db.session.add(post)
-    #    db.session.commit()
     if request.method == "GET":
-        print("get")
         return render_template("create_record.html")
 
     input_id = request.form.get('input_id')
@@ -78,6 +67,5 @@ def view_record():
     post = Post()
     if request.method == "POST":
         record_id = request.form.get('requested_id')
-        print(record_id)
         post = Post.query.get_or_404(record_id, description=f"Record #{record_id} not found.")
     return render_template("view_record.html", record=post)
