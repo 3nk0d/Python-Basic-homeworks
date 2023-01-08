@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tags_list</title>
+</head>
+<body>
+{% for item in object_list %}
+    <li>ID: {{ item.id }} -> TAG: {{ item.tag }} </li>
+{% endfor %}
+</body>
+</html>

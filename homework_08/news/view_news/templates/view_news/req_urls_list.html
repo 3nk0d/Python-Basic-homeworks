@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>req_urls_list</title>
+</head>
+<body>
+{% for url in object_list %}
+    <li>ID: {{ url.id }} -> NAME: {{ url.name }} URL: {{ url.url }} </li>
+{% endfor %}
+</body>
+</html>
