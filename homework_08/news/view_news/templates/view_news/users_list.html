@@ -6,7 +6,7 @@
 </head>
 <body>
 {% for user in object_list %}
-    <li>ID: {{ user.id }} -> USERNAME: {{ user.username }} NAME: {{ user.name }} EMAIL: {{ user.email }} </li>
+    <li><a href=" {% url 'user' pk=user.pk %}">ID: {{ user.id }} -> USERNAME: {{ user.username }} NAME: {{ user.name }} EMAIL: {{ user.email }}</a></li>
 {% endfor %}
 </body>
 </html>
