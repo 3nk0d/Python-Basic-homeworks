@@ -18,7 +18,7 @@ from django.urls import path
 from view_news.views import main_page, Posts_ListView, Users_ListView, Req_Urls_ListView, Tags_ListView, Posts_DetailView, Users_DetailView, Req_Urls_DetailView, Tags_DetailView
 
 urlpatterns = [
-    path('', main_page),
+    path('', main_page, name='main'),
     path('posts/', Posts_ListView.as_view(), name='posts'),
     path('posts/<int:pk>/', Posts_DetailView.as_view(), name='post'),
     path('users/', Users_ListView.as_view(), name='users'),
