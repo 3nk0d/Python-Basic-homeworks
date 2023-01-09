@@ -1,8 +1,12 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% block head %}
     <title>users_detail</title>
+    {% endblock %}
 </head>
 <body>
 {% block content %}
@@ -10,6 +14,7 @@
     <p>
         {{object.users}}
     </p>
+    <a href=" {% url 'tags' %}">Назад</a>
 {% endblock %}
 </body>
 </html>
