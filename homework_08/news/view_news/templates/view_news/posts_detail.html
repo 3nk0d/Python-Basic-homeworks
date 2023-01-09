@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>posts_detail</title>
+</head>
+<body>
+{% block content %}
+    <h1>{{object.title}}</h1>
+    <p>
+        {{object.text}}
+    </p>
+        {{object.url}}
+    </p>
+        {{object.from_url.name}}
+    </p>
+        {{object.from_url.url}}
+{% endblock %}
+</body>
+</html>
