@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     {% block head %}
-    <title>Title</title>
+        <title>Title</title>
     {% endblock %}
 </head>
 <body>
 {% block content %}
-<h1>Hello, {{ user.username|default:"anonymous" }}!</h1>
+    <h1>Hello, {{ user.username|default:"anonymous" }}!</h1>
 {% endblock %}
 </body>
 </html>

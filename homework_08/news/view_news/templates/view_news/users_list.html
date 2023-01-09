@@ -5,14 +5,15 @@
 <head>
     <meta charset="UTF-8">
     {% block head %}
-    <title>users_list</title>
+        <title>users_list</title>
     {% endblock %}
 </head>
 <body>
 {% block content %}
-{% for user in object_list %}
-    <li><a href=" {% url 'user' pk=user.pk %}">ID: {{ user.id }} -> USERNAME: {{ user.username }} NAME: {{ user.name }} EMAIL: {{ user.email }}</a></li>
-{% endfor %}
+    {% for user in object_list %}
+        <li><a href=" {% url 'user' pk=user.pk %}">ID: {{ user.id }} -> USERNAME: {{ user.username }}
+            NAME: {{ user.name }} EMAIL: {{ user.email }}</a></li>
+    {% endfor %}
 {% endblock %}
 </body>
 </html>

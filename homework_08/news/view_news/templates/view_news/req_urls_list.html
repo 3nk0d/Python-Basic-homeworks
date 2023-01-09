@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     {% block head %}
-    <title>req_urls_list</title>
+        <title>req_urls_list</title>
     {% endblock %}
 </head>
 <body>
 {% block content %}
-{% for url in object_list %}
-    <li><a href=" {% url 'source' pk=url.pk %}">ID: {{ url.id }} -> NAME: {{ url.name }} URL: {{ url.url }}</a></li>
-{% endfor %}
+    {% for url in object_list %}
+        <li><a href=" {% url 'source' pk=url.pk %}">ID: {{ url.id }} -> NAME: {{ url.name }} URL: {{ url.url }}</a></li>
+    {% endfor %}
 {% endblock %}
 </body>
 </html>
