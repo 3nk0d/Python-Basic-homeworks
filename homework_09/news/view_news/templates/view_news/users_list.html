@@ -11,8 +11,11 @@
 <body>
 {% block content %}
     {% for user in object_list %}
-        <li><a href=" {% url 'user' pk=user.pk %}">ID: {{ user.id }} -> USERNAME: {{ user.username }}
-            NAME: {{ user.name }} EMAIL: {{ user.email }}</a></li>
+        <li>
+            <a href=" {% url 'user' pk=user.pk %}">ID: {{ user.id }} -> USERNAME: {{ user.username }}
+            NAME: {{ user.name }} EMAIL: {{ user.email }}</a>
+            <a href=" {% url 'user_delete' pk=user.pk %}">Удалить запись</a>
+        </li>
     {% endfor %}
 {% endblock %}
 </body>

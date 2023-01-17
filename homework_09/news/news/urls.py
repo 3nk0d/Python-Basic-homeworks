@@ -15,17 +15,36 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from view_news.views import main_page, Posts_ListView, Users_ListView, Req_Urls_ListView, Tags_ListView, Posts_DetailView, Users_DetailView, Req_Urls_DetailView, Tags_DetailView
+from view_news.views import (
+    main_page,
+    Posts_ListView,
+    Users_ListView,
+    Req_Urls_ListView,
+    Tags_ListView,
+    Posts_DetailView,
+    Users_DetailView,
+    Req_Urls_DetailView,
+    Tags_DetailView,
+    Posts_Delete,
+    Users_Delete,
+    Req_Urls_Delete,
+    Tags_Delete,
+)
+
 
 urlpatterns = [
     path('', main_page, name='main'),
     path('posts/', Posts_ListView.as_view(), name='posts'),
     path('posts/<int:pk>/', Posts_DetailView.as_view(), name='post'),
+    path('posts/delete/<int:pk>/', Posts_Delete.as_view(), name='post_delete'),
     path('users/', Users_ListView.as_view(), name='users'),
     path('users/<int:pk>/', Users_DetailView.as_view(), name='user'),
+    path('users/delete/<int:pk>/', Users_Delete.as_view(), name='user_delete'),
     path('req_urls/', Req_Urls_ListView.as_view(), name='sources'),
     path('req_urls/<int:pk>/', Req_Urls_DetailView.as_view(), name='source'),
+    path('req_urls/delete/<int:pk>/', Req_Urls_Delete.as_view(), name='source_delete'),
     path('tags/', Tags_ListView.as_view(), name='tags'),
     path('tags/<int:pk>/', Tags_DetailView.as_view(), name='tag'),
+    path('tags/delete/<int:pk>/', Tags_Delete.as_view(), name='tag_delete'),
     path('admin/', admin.site.urls),
 ]
