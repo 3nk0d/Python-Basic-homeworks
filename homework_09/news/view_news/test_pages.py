@@ -7,12 +7,6 @@ from .models import Users, Req_Urls, Posts, Tags
 class TestPage(TestCase):
 
     def setUp(self) -> None:
-        # data = {"username": "dwad", "name": "wadw", "email": "dawd32dwa.com"}
-        # response = self.client.post("/users/create/", data=data)
-        # self.assertEqual(response.status_code, 200)
-        # self.assertEqual(Users.objects.count(), 1)
-
-
         self.user = Users.objects.create(username="link", name="James", email="Jam2@mail.com")
         print("Created:", self.user)
 
@@ -207,12 +201,3 @@ class TestPage(TestCase):
 
         response = self.client.get(f"/tags/delete/{self.tag.pk}/")
         self.assertEqual(response.status_code, 200)
-
-    def test_try_update_data(self):
-        print("test_try_update_data")
-        print(self.user.name)
-        data = {"username": "link", "name": "Mike", "email": "Jam2@mail.com"}
-        response = self.client.post(reverse("user_change", kwargs={'pk': self.user.id}), data=data)
-        self.assertEqual(response.status_code, 302)
-        print(self.user.name)
-
