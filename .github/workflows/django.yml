@@ -2,7 +2,7 @@ name: Django CI
 
 defaults:
   run:    
-    working-directory: scripts
+    working-directory: ./homework_07/news/
 on:  
   push:
     branches: [ "main" ]  
