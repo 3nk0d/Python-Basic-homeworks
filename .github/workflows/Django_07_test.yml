@@ -5,7 +5,9 @@ defaults:
     working-directory: ./homework_07/news/
 on:  
   push:
-    branches: [ "main" ]  
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
   build:
     runs-on: ubuntu-latest
