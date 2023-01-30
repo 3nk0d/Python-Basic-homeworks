@@ -3,11 +3,7 @@ name: Django_07_test
 defaults:
   run:    
     working-directory: ./homework_07/news/
-on:  
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
