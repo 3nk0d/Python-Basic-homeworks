@@ -24,4 +24,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python news/manage.py test
+        python homework_07/news/manage.py test
