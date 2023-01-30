@@ -1,5 +1,8 @@
-name: Pylint
+name: Pylint_07_test
 
+defaults:
+  run:    
+    working-directory: ./homework_07/
 on: [push]
 
 jobs:
