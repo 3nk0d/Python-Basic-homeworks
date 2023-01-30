@@ -1,4 +1,4 @@
-name: Django CI
+name: Django_07_test
 
 defaults:
   run:    
