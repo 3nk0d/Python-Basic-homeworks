@@ -1,4 +1,4 @@
-name: Pylint_01_test
+name: Pylint_10_test
 
 defaults:
   run:    
