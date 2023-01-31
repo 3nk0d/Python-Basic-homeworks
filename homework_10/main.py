@@ -23,11 +23,11 @@ PRIME = "prime"
 def is_prime(num):
     """
     Функция дляпроверки одного числа
-    Простое ли это число.    
+    Простое ли это число.
     """
     if num in (0, 1):
         return False
-    elif num == 2:
+    if num == 2:
         return True
     for i in range(2, num):
         if num % i == 0:
@@ -47,6 +47,6 @@ def filter_numbers(lst, filtr):
     """
     if filtr == ODD:
         return [i for i in lst if i % 2]
-    elif filtr == EVEN:
-        return [i for i in lst if not(i % 2)]
+    if filtr == EVEN:
+        return [i for i in lst if not i % 2]
     return list(filter(is_prime, lst))
