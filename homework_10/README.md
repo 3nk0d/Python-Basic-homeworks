@@ -10,6 +10,7 @@
 #### Django:
 - Django_07_test.yml - для homework_07
 - Django_08_test.yml - для homework_08
+
 #### Pylint:
 Без исправления, выдает **x**
 - Pylint_07_test.yml - для homework_07
