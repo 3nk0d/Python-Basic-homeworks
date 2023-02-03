@@ -7,3 +7,7 @@
 - создан pipeline с тестированием
 - pipeline запускается автоматически в master ветке
 - pipeline запускается вручную в MR
+
+
+### Ссылка на Gitlab
+[homework_11](https://gitlab.com/3nk0d/homework_11)
